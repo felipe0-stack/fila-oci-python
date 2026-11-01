@@ -1,0 +1,23 @@
+[fila]
+# Copie o OCID principal da fila, sem o sufixo -dlq.
+ocid = COLE_AQUI_O_OCID_DA_FILA_PRINCIPAL
+endpoint = https://cell-1.queue.messaging.us-phoenix-1.oci.oraclecloud.com
+
+[oci]
+arquivo = ~/.oci/config
+perfil = DEFAULT
+
+[consumidor]
+# Inicialmente, receberemos uma mensagem por vez.
+visibilidade_segundos = 30
+espera_segundos = 20
+nova_tentativa_segundos = 5
+
+[smtp]
+# Necessario apenas ao executar consumidor.py --modo smtp.
+host =
+porta = 587
+seguranca = starttls
+usuario =
+remetente =
+timeout_segundos = 10
